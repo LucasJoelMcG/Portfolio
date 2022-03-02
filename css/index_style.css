@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  color: blanchedalmond;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes linea {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+body {
+  background: linear-gradient(to right, rgb(100, 65, 165), rgb(42, 8, 69));
+}
+
+.contenedor {
+  display: grid;
+  grid-template: 50px 175px 225px 1fr 50px/1fr 1fr 1fr;
+  height: 100vh;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.uno {
+  grid-column: 1/4;
+  grid-row: 1;
+}
+
+.dos {
+  grid-column: 1/4;
+  grid-row: 2;
+  color: rgb(69, 110, 223);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.tres {
+  grid-column: 1/4;
+  grid-row: 3/4;
+  margin-left: 3%;
+}
+
+.cuatro {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  margin-right: 3%;
+}
+
+.cinco {
+  grid-column: 1/4;
+  grid-row: 5/6;
+}
+
+footer {
+  text-align: center;
+}
+
+img {
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+nav {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 12px;
+  padding-left: 16px;
+  height: 30px;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.about {
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  width: auto;
+  height: 50px;
+  margin: 0%;
+}
+
+h1,
+h2,
+h3,
+img,
+.about {
+  animation-name: aparecer;
+  animation-duration: 5s;
+}
+
+.GradientBorder {
+  position: relative;
+  color: #fff;
+  background: #020117;
+}
+
+.GradientBorder::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  z-index: -1;
+  animation-name: linea;
+  animation-duration: 4s;
+}
+
+.GradientBorder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+  z-index: -2;
+  filter: blur(20px);
+  animation-name: linea;
+  animation-duration: 4s;
+}
+
+@media only screen and (max-width: 700px) {
+  .contenedor {
+    grid-template: 40px 150px 300px 250px 50px/ 1fr;
+  }
+
+  nav {
+    font-size: 17px;
+  }
+
+  .uno {
+    grid-column: 1/5;
+    grid-row: 1;
+  }
+
+  .dos {
+    grid-column: 1/5;
+    grid-row: 2/3;
+    font-size: 2.2rem;
+  }
+
+  .tres {
+    grid-column: 1/5;
+    grid-row: 3/4;
+  }
+
+  .cuatro {
+    grid-row: 4/5;
+    grid-column: 1/5;
+  }
+
+  .cinco {
+    grid-column: 1/5;
+    grid-row: 5/6;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .tres {
+    grid-column: 1/5;
+    grid-row: 3/4;
+    font-size: 0.9rem;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+}

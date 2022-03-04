@@ -108,6 +108,7 @@ h2 {
 
 h2 {
   color: dodgerblue;
+  text-align: center;
 }
 
 div a {
@@ -129,7 +130,6 @@ img {
 h1,
 h2,
 img,
-div a,
 p {
   animation-name: aparecer;
   animation-duration: 4s;
@@ -138,6 +138,19 @@ p {
   position: relative;
   color: #fff;
   background: #020117;
+}
+
+p a {
+  display: inline;
+  margin-left: 0%;
+  text-decoration: underline;
+}
+
+h2 a {
+  color: dodgerblue;
+  display: inline;
+  margin-left: 0%;
+  text-decoration: none;
 }
 
 .GradientBorder::after {
